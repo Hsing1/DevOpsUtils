@@ -510,7 +510,8 @@ if ($case -eq 0) {
        #get-childitem -path //10.13.200.25/MAMDownload/hsing1 -Recurse -exclude hsing1*
        #get-childitem -path //10.13.200.25/MAMDownload/hsing1 -Recurse  | ?{$_.PSIsContainer -and $_.FullName -notmatch "hsing1"}
        #get-childitem -path //10.13.200.25/MAMDownload/hsing1 -Recurse -File | ?{$_.FullName -notmatch "hsing1"}
-       get-childitem -path //10.13.200.25/MAMDownload/ -Recurse -File | sort-object CreattionTime | where {$_.FullName -notmatch "hsing1"} | %{$_.FullName} 
+       #Filter specific folder
+       get-childitem -path //10.13.200.25/MAMDownload/ -Recurse -File | sort-object CreattionTime | where {$_.FullName -notmatch "hsing1"} | %{$_.FullName}
     }
 
     if ($False) {
